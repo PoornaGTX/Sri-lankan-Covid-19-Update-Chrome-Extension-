@@ -1,0 +1,10 @@
+{
+    "name": "Myextention",
+    "version": "0.01",
+    "description":"Hello",
+    "browser_action":{
+    "default_title": "mask HTML",
+    "default_popup": "mask.html"
+},
+"manifest_version":2
+}
