@@ -2,13 +2,47 @@
     <head>
         <meta charset="utf-8">
         <title>Mask update</title>
+
+
     </head>
 
     <body>
-        <h1>
-            Todays Corana Update</h1>
+        
+        <div>
+          <p>New covid cases : <span id="newcases"></span></p> </br>
+          <p>Total covid cases : <span id="newtotal"></span></p> </br>
+          <p>Recoverd  : <span id="newrecoverd"></span></p> </br>
 
-        <script src="mask.js"></script>
 
+
+        </div>
+        <script>
+             fetch('https://www.hpb.health.gov.lk/api/get-current-statistical')
+             .then((apidata)=> {
+                    console.log(apidata);
+                    return apidata.json();
+
+              }).then((actualdata) => {
+
+                    const mydata = actualdata.data;
+
+
+                    
+                  document.getElementById('newcases').textContent = mydata.local_new_cases;
+                  document.getElementById('newtotal').textContent = mydata.local_total_cases;
+                  document.getElementById('newrecoverd').textContent = mydata.local_recovered;
+
+                    console.log(actualdata);
+
+                }).catch((error) => {
+
+                });
+
+
+            
+
+
+        </script>
+        
     </body>
 </html>
