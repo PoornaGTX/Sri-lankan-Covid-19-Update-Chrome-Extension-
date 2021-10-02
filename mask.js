@@ -13,8 +13,10 @@
                     
                   document.getElementById('newcases').textContent = actualdata.data.local_new_cases;
                   document.getElementById('newtotal').textContent = actualdata.data.local_total_cases;
+                  document.getElementById('covidlk').textContent = actualdata.data.local_deaths;
                   document.getElementById('newrecoverd').textContent = actualdata.data.local_recovered;
                   document.getElementById('newupdate').textContent = actualdata.data.update_date_time;
+                
                   
 
                     console.log(actualdata);
@@ -27,4 +29,8 @@
             
             }
 
+
+            
+
 getData();
+
